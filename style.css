@@ -9,7 +9,7 @@ body {
 	font-family: 'Fira Sans', sans-serif; 
 	font-size: 18px;
 	margin: 0;padding: 80px 0;
-	height: 100vh;
+	min-height: 100vh;
 	transition: background ease 2s;
 }
 
