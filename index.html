@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+	<meta charset="UTF-8">
+	<title>OOSE Calculator</title>
+	<script src="vue2.min.js"></script>
+	<link rel="stylesheet" href="style.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+</head>
+<body>
+	<div id="mask" class="mask-default"></div>
+	<template id="column-template">
+		<div>
+			<label :for="id"><slot></slot>：</label>
+			<input :id="id" type="number" v-model="value" @change="update">
+			<span class="percentage">( {{ percentage }}% )</span>
+		</div>
+	</template>
+
+	<div id="app">
+		<column id="participation" percentage="20" :default="s.participation">平時成績</column>
+		<column id="teamwork" percentage="20" :default="s.teamwork">Teamwork</column>
+		<column id="quiz1" percentage="10" :default="s.quiz1">第一次考試</column>
+		<column id="quiz2" percentage="10" :default="s.quiz2">第二次考試</column>
+		<column id="quiz3" percentage="20" :default="s.quiz3">第三次考試</column>
+		<div class="summary">
+			<div v-if="quiz4 <= 110">目前總成績 <span class="current">{{ current }}</span> 分</div>
+			<div v-if="quiz4 <= 110 && quiz4 > 0">你的期末考最少需要 <span class="quiz4">{{ quiz4 }}</span> 分</div>
+			
+			<div v-if="shouldSorry"><span class="sorry">I'm sorry.</span></div>
+			<div v-if="shouldCongrats"><span class="congrats">Congrats!</span></div>
+		</div>
+	</div>
+
+<script src="app.js"></script>
+</body>
+</html>
