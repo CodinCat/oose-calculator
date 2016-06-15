@@ -6,7 +6,7 @@ div {box-sizing: border-box;}
 body {
 	background: linear-gradient(141deg, #de5de0 0%, #4fa6ff 100%);
 	box-sizing: border-box;
-	font-family: 'Fira Sans', sans-serif; 
+	font-family: 'Fira Sans', '微軟正黑體', sans-serif;
 	font-size: 18px;
 	margin: 0;padding: 80px 0;
 	min-height: 100vh;
