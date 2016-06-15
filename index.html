@@ -9,13 +9,13 @@
 </head>
 <body>
 	<div id="mask" class="mask-default"></div>
-	<template id="column-template">
+	<script type="text/x-template" id="column-template">
 		<div>
 			<label :for="id"><slot></slot>：</label>
 			<input :id="id" type="number" v-model="value" @change="update">
 			<span class="percentage">( {{ percentage }}% )</span>
 		</div>
-	</template>
+	</script>
 
 	<div id="app">
 		<column id="participation" percentage="20" :default="s.participation">平時成績</column>
